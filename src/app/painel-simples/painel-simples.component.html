@@ -1,0 +1,7 @@
+<div class="row">
+    <div class="card" *ngFor="let movie of movies.results">
+      <div class="card-body">
+          <img src="{{base_url}}{{size}}{{movie.poster_path}}">
+      </div>
+    </div>
+</div>
