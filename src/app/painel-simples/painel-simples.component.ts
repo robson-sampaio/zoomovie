@@ -1,5 +1,8 @@
 import { Component, OnInit, OnChanges, SimpleChanges, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { MatDialog } from '@angular/material';
+import { DetalhesComponent } from './detalhes/detalhes.component';
+
 
 @Component({
   selector: 'app-painel-simples',
@@ -16,15 +19,24 @@ export class PainelSimplesComponent implements OnInit, OnChanges {
   public file_path;
   public isLoad = false;
   public movies = {};
+  public detalhes;
+  public mostrarDetalhes = false;
   
   // @Input('parentData') public busca =""
   @Input('parentData') public idGenero;
   @Input('searchData') public query;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, public dialog: MatDialog) { }
 
   getDetails(movie){
-    console.log(movie);
+    
+    this.detalhes = movie;
+    console.log(this.detalhes);
+    this.dialog.open(DetalhesComponent, {
+      data: {
+        filme:movie
+      }
+    })
   }
 
   ngOnInit() {
