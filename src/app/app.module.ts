@@ -13,6 +13,7 @@ import { BarraNavegacaoComponent } from './barra-navegacao/barra-navegacao.compo
 import { BarraBuscaComponent } from './barra-navegacao/barra-busca/barra-busca.component';
 import { MenuLateralComponent } from './barra-navegacao/menu-lateral/menu-lateral.component';
 import { PainelSimplesEspecificoComponent } from './painel-simples/painel-simples-especifico/painel-simples-especifico.component';
+import { DetalherComponent } from './painel-simples/detalher/detalher.component';
 
 
 let routes = [
@@ -47,7 +48,8 @@ let routes = [
     BarraNavegacaoComponent,
     BarraBuscaComponent,
     MenuLateralComponent,
-    PainelSimplesEspecificoComponent
+    PainelSimplesEspecificoComponent,
+    DetalherComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
+import { Component, OnChanges, SimpleChanges, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-barra-navegacao',
@@ -7,10 +7,22 @@ import { Component, OnChanges, SimpleChanges, Output, EventEmitter } from '@angu
 })
 export class BarraNavegacaoComponent implements OnChanges {
   
-  public message = "";
+  private _query: string;
   public generoLista;
   @Output() public childEvent = new EventEmitter();
-  @Output() onToggle = new EventEmitter();
+  @Output() public onToggle = new EventEmitter();
+  @Output() public searchEvent = new EventEmitter();
+
+  get query(): string{
+    return this._query;
+  }
+
+  @Output()
+  set query(value: string){
+    this._query = value;
+    console.log('teste');
+    this.fireEventSearch();
+  }
 
   constructor() { }
 
@@ -22,8 +34,16 @@ export class BarraNavegacaoComponent implements OnChanges {
     this.onToggle.emit()
   }
 
-  ngOnChanges(changes: SimpleChanges){
+  fireEventSearch(){
+    console.log(this._query)
+    this.searchEvent.emit(this._query);
+  }
 
+  ngOnChanges(changes: SimpleChanges){
+    console.log(changes);
+    if(changes.query){
+      this.fireEventSearch();
+    }
   }
 
 

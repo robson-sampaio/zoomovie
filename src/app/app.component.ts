@@ -12,6 +12,7 @@ export class AppComponent implements OnInit, OnChanges{
   public message;
   public generos;
   public idGenero;
+  public _query;
 
   ngOnInit(){ this.title = "Zoooomovies"}
 

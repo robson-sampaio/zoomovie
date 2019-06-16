@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './menu-lateral.component.html',
   styleUrls: ['./menu-lateral.component.css']
 })
-export class MenuLateralComponent implements OnInit, OnChanges {
+export class MenuLateralComponent implements OnInit {
 
   constructor(private http:HttpClient) { }
   public generos = {};
@@ -14,7 +14,7 @@ export class MenuLateralComponent implements OnInit, OnChanges {
   public isLoad = false;
   public menuAberto = false;
 
-  @Input() public idGenero;7
+  @Input() public idGenero;
   @Output() public childEvent = new EventEmitter();
   
   ngOnInit() {
@@ -24,11 +24,6 @@ export class MenuLateralComponent implements OnInit, OnChanges {
         this.isLoad = true;
         // console.log(this.generos)
       })
-  }
-
-  ngOnChanges(changes: SimpleChanges){
-    console.log(changes);
-    
   }
 
   abreFechaMenu(){

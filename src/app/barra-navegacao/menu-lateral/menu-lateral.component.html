@@ -1,4 +1,4 @@
-<div class="menu" [class.menu-open]="true" (click)="abreFechaMenu()">
+<div class="menu" [class.menu-open]="menuAberto" (click)="abreFechaMenu()">
   <ul *ngFor="let aux of generos.genres">
     <li class="visible-xs"><a routerLink="/aux" (click)="getGenero(aux.id)">{{aux.name}}</a></li>
   </ul>

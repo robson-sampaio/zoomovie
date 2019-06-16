@@ -17,10 +17,15 @@ export class PainelSimplesComponent implements OnInit, OnChanges {
   public isLoad = false;
   public movies = {};
   
-  @Input('parentData') public busca =""
+  // @Input('parentData') public busca =""
   @Input('parentData') public idGenero;
+  @Input('searchData') public query;
 
   constructor(private http:HttpClient) { }
+
+  getDetails(movie){
+    console.log(movie);
+  }
 
   ngOnInit() {
     this.http.get("https://api.themoviedb.org/3/discover/movie?api_key=95e310c9cdf43a266b381436c3d83fc8&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=")
@@ -51,12 +56,21 @@ export class PainelSimplesComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges){
-    console.log(changes)  
+    // console.log(changes)  
     if(changes.idGenero){
       this.http.get("https://api.themoviedb.org/3/discover/movie?api_key=95e310c9cdf43a266b381436c3d83fc8&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres="+this.idGenero)
         .subscribe(data =>{
           this.movies = data;
-          console.log(data);
+          // console.log(data);
+          this.isLoad = true;
+        })
+    }
+
+    if(changes.query){
+      this.http.get("https://api.themoviedb.org/3/search/movie?api_key=95e310c9cdf43a266b381436c3d83fc8&language=pt-BR&query="+this.query+"&page=1&include_adult=true")
+        .subscribe(data =>{
+          this.movies = data;
+          console.log(this. query);
           this.isLoad = true;
         })
     }

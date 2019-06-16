@@ -1,12 +1,14 @@
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="text" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0">Buscar</button>
-  </form> 
+  <div class="form-inline">
+    <input class="form-control mr-sm-2" [(ngModel)]="query" type="text" aria-label="Search">
+    <button (click)="fireEvent()" class="btn btn-outline-success my-2 my-sm-0">Buscar</button>
+  </div> 
 
   <!-- <mat-form-field floatLabel="never" style="padding: 10px;">
     <mat-label>Search</mat-label>
     <input matInput [(ngModel)]="test">
   </mat-form-field> -->
 
-  <!-- <input type="text" [(ngModel)]="test" (ngModelChange)="buscaEvento($event)" placeholder="Test field"> -->
+  <!-- <input type="text" [(ngModel)]="query">
+  <button (click)="fireEvent()">SEARCH</button> -->
+
   <!-- <app-painel-simples *ngIf="isLoad" [parentData]="busca"></app-painel-simples> -->

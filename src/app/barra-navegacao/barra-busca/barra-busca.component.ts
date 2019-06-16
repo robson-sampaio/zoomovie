@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-barra-busca',
@@ -7,20 +7,14 @@ import { Component, Input, OnChanges, SimpleChanges, Output, EventEmitter, OnIni
 })
 
 // Responsável por pegar a string que está sendo gerada dentro da barra de pesquisa;
-export class BarraBuscaComponent implements OnInit, OnChanges {
+export class BarraBuscaComponent{
   
-  @Output() public childEvent = new EventEmitter();
+  public query = ""
+  @Output() public searchEvent = new EventEmitter();
+
   constructor() { }
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log('barra-busca')
+  fireEvent(){
+    this.searchEvent.emit(this.query);
   }
-
-  ngOnInit(){}
-
-  buscaEvento(evento){
-    console.log(evento)
-    this.childEvent.emit(evento)
-  }
-
 }

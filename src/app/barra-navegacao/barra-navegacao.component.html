@@ -1,3 +1,4 @@
+<!-- "barra de navegacao + {{_query}}" -->
 <div class="pos-f-t">
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
@@ -10,7 +11,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <!-- <input type="text" [(ngModel)]="test" (ngModelChange)="testLog($event)" placeholder="Test field"> -->
-    <app-barra-busca (childEvent)="message=$event"></app-barra-busca>
+    <app-barra-busca (searchEvent)="_query=$event"></app-barra-busca>
   </nav>
 </div>
 

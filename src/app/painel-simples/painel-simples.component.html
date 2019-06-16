@@ -1,9 +1,9 @@
-<app-painel-simples-especifico [base_url]="base_url" [size]="size" [movies]="movies"></app-painel-simples-especifico>
+<!-- <app-painel-simples-especifico [base_url]="base_url" [size]="size" [movies]="movies"></app-painel-simples-especifico> -->
 
-<!-- <div class="row">
+<div class="row">
     <div class="card" *ngFor="let movie of movies.results">
       <div class="card-body">
-          <img src="{{base_url}}{{size}}{{movie.poster_path}}">
+          <img (click)="getDetails(movie)" src="{{base_url}}{{size}}{{movie.poster_path}}">
       </div>
     </div>
-</div> -->
+</div>
