@@ -1,4 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.--> 
-<app-barra-navegacao></app-barra-navegacao>
-<app-painel-simples></app-painel-simples>
-<router-outlet></router-outlet>
+<!-- {{idGenero}} -->
+<app-barra-navegacao (onToggle)="menuLateral.abreFechaMenu()" (childEvent)="message"></app-barra-navegacao>
+<div class="main">
+
+    <app-menu-lateral #menuLateral (childEvent)="idGenero=$event" ></app-menu-lateral>
+    <div class="content">
+            <!-- <router-outlet></router-outlet>  -->
+        <app-painel-simples [parentData]="idGenero"></app-painel-simples>
+    </div>
+
+</div>
+
+<!-- <app-barra-busca></app-barra-busca> -->
