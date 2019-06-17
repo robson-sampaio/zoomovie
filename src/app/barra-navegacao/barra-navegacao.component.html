@@ -7,9 +7,16 @@
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">
+    <div class="form-inline">
     <button class="navbar-toggler" (click)="fireEventToggle()" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
+    <button style="margin-left: 15px" (click)="homeEvent()" class="btn btn-outline-success my-2 my-sm-0">HOME</button>
+    <button style="margin-left: 15px" (click)="homeEvent()" class="btn btn-outline-success my-2 my-sm-0">HOME</button>
+    <button style="margin-left: 15px" (click)="homeEvent()" class="btn btn-outline-success my-2 my-sm-0">HOME</button>
+    <button style="margin-left: 15px" (click)="homeEvent()" class="btn btn-outline-success my-2 my-sm-0">HOME</button>
+    </div>
     <!-- <input type="text" [(ngModel)]="test" (ngModelChange)="testLog($event)" placeholder="Test field"> -->
     <app-barra-busca (searchEvent)="_query=$event"></app-barra-busca>
   </nav>

@@ -59,7 +59,7 @@ export class PainelSimplesComponent implements OnInit, OnChanges {
             this.isLoad = true
           })
         }else{
-          this.http.get("https://api.themoviedb.org/3/search/movie?api_key=95e310c9cdf43a266b381436c3d83fc8&language=pt-BR&query="+evento+"&page=1&include_adult=false")
+          this.http.get("https://api.themoviedb.org/3/search/movie?api_key=95e310c9cdf43a266b381436c3d83fc8&language=pt-BR&query="+evento+"&page=1&include_adult=true")
           .subscribe( data => {
             this.movies = data
             this.isLoad = true
