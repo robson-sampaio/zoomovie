@@ -29,7 +29,6 @@ export class PainelSimplesComponent implements OnInit, OnChanges {
   constructor(private http:HttpClient, public dialog: MatDialog) { }
 
   getDetails(movie){
-    
     this.detalhes = movie;
     console.log(this.detalhes);
     this.dialog.open(DetalhesComponent, {
@@ -40,13 +39,12 @@ export class PainelSimplesComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.http.get("https://api.themoviedb.org/3/discover/movie?api_key=95e310c9cdf43a266b381436c3d83fc8&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=")
+    this.http.get("https://api.themoviedb.org/3/discover/movie?api_key=95e310c9cdf43a266b381436c3d83fc8&sort_by=popularity.desc&include_adult=false&include_video=false&language=pt-BR")
       .subscribe( data => {
         this.movies = data;
         // console.log(this.movies)
         this.isLoad = true;
       })
-    // https://api.themoviedb.org/3/discover/movie?api_key=95e310c9cdf43a266b381436c3d83fc8&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=test
   }
 
   searchEvent(evento){
@@ -70,7 +68,7 @@ export class PainelSimplesComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges){
     // console.log(changes)  
     if(changes.idGenero){
-      this.http.get("https://api.themoviedb.org/3/discover/movie?api_key=95e310c9cdf43a266b381436c3d83fc8&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres="+this.idGenero)
+      this.http.get("https://api.themoviedb.org/3/discover/movie?api_key=95e310c9cdf43a266b381436c3d83fc8&sort_by=popularity.desc&include_adult=false&language=pt-BR&include_video=false&with_genres="+this.idGenero)
         .subscribe(data =>{
           this.movies = data;
           // console.log(data);

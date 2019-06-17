@@ -10,6 +10,7 @@ import { MAT_DIALOG_DATA } from '@angular/material'
 export class DetalhesComponent implements OnChanges {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+  @Input('parentData') public contrasteOn = true;
 
   ngOnChanges(changes: SimpleChanges){
     console.log(changes);

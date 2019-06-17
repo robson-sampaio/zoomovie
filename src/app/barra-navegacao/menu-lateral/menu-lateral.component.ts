@@ -6,15 +6,22 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './menu-lateral.component.html',
   styleUrls: ['./menu-lateral.component.css']
 })
-export class MenuLateralComponent implements OnInit {
+export class MenuLateralComponent implements OnInit, OnChanges {
 
   constructor(private http:HttpClient) { }
   public generos = {};
   public generoEscolhido;
   public isLoad = false;
   public menuAberto = false;
+  public menuColor = true;
+  public fontSize = "um"
+  public fonteUm = false;
+  public fonteDois = false;
+  public fonteTres = false;
 
   @Input() public idGenero;
+  @Input('fontSizeData') public fonte;
+  @Input('parentData') public color = "white";
   @Output() public childEvent = new EventEmitter();
   
   ngOnInit() {
@@ -24,6 +31,36 @@ export class MenuLateralComponent implements OnInit {
         this.isLoad = true;
         // console.log(this.generos)
       })
+  }
+
+  mudaTamanhoFonte(fonte){
+    console.log(fonte)
+    if(fonte == "um"){
+      this.fonteUm = true;
+      this.fonteDois = false;
+      this.fonteTres = false;
+    }else if(fonte == "dois"){
+      this.fonteUm = false;
+      this.fonteDois = true;
+      this.fonteTres = false;
+    }else if(fonte == "tres"){
+      this.fonteUm = false;
+      this.fonteDois = false;
+      this.fonteTres = true;
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges){
+    // console.log(changes)
+    if(changes.color){
+      this.menuColor = !this.menuColor;
+    }
+
+    if(changes.fonte){
+      console.log(this.fonte)
+      this.mudaTamanhoFonte(this.fonte);
+    }
+
   }
 
   abreFechaMenu(){

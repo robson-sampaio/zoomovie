@@ -7,3 +7,21 @@
     display: inline-block;
     margin-left: 10px;
 }
+
+/* .navbar-toggler-icon{
+    background-color: white !important;
+    border-style: solid;
+    border-color: cadetblue;
+} */
+
+.fonteUm{
+    font-size: 15px;
+}
+
+.fonteDois{
+    font-size: 20px;
+}
+
+.fonteTres{
+    font-size: 25px;
+}

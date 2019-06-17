@@ -1,21 +1,28 @@
 <!-- "barra de navegacao + {{_query}}" -->
+<!-- {{'O tamanho da fonte é ' + fontSize}} -->
 <div class="pos-f-t">
-  <div class="collapse" id="navbarToggleExternalContent">
-    <div class="bg-dark p-4">
-      <h4 class="text-white">Collapsed content</h4>
+  <!-- <div class="collapse " id="navbarToggleExternalContent"> -->
+    <!-- <div class="bg-success p-4">
+      <h4 class="text-success">Collapsed content</h4>
       <span class="text-muted">Toggleable via the navbar brand.</span>
-    </div>
-  </div>
-  <nav class="navbar navbar-dark bg-dark">
-    <div class="form-inline">
-    <button class="navbar-toggler" (click)="fireEventToggle()" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+    </div> -->
+  <!-- </div> -->
+  <nav class="navbar navbar-{{iconColor}} bg-{{color}}">
+    <div class="form-inline" >
+    <button [class.fonteDois]="fonteDois" [class.fonteTres]="fonteTres" [class.fonteUm]="fonteUm" class="navbar-toggler" (click)="fireEventToggle()" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     
-    <button style="margin-left: 15px" (click)="homeEvent()" class="btn btn-outline-success my-2 my-sm-0">HOME</button>
-    <button style="margin-left: 15px" (click)="homeEvent()" class="btn btn-outline-success my-2 my-sm-0">HOME</button>
-    <button style="margin-left: 15px" (click)="homeEvent()" class="btn btn-outline-success my-2 my-sm-0">HOME</button>
-    <button style="margin-left: 15px" (click)="homeEvent()" class="btn btn-outline-success my-2 my-sm-0">HOME</button>
+    <button [class.fonteDois]="fonteDois" [class.fonteTres]="fonteTres" [class.fonteUm]="fonteUm" style="margin-left: 15px" (click)="homeEvent()" class="btn btn-outline-success my-2 my-sm-0">HOME</button>
+    <!-- <a id="bt-autocontraste" href="#" title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Ativar o Enable high contrast">
+        <span class="sr-only">Ativar alto contraste</span>
+
+        <span class="fa fa-adjust"></span>
+      </a> -->
+    <button [class.fonteDois]="fonteDois" [class.fonteTres]="fonteTres" [class.fonteUm]="fonteUm" style="margin-left: 15px" (click)="mudaCor()" class="btn btn-outline-success my-2 my-sm-0"><i class="fas fa-adjust"></i></button>
+    <button [class.fonteDois]="fonteDois" [class.fonteTres]="fonteTres" [class.fonteUm]="fonteUm" style="margin-left: 15px" (click)="aumentaFonte()" class="btn btn-outline-success my-2 my-sm-0"><img src="https://img.icons8.com/office/20/000000/increase-font.png"></button>
+    <button [class.fonteDois]="fonteDois" [class.fonteTres]="fonteTres" [class.fonteUm]="fonteUm" style="margin-left: 15px" (click)="normalizaFonte()" class="btn btn-outline-success my-2 my-sm-0"><img src="https://img.icons8.com/office/20/000000/text-color.png"></button>
+    <button [class.fonteDois]="fonteDois" [class.fonteTres]="fonteTres" [class.fonteUm]="fonteUm" style="margin-left: 15px" (click)="diminuiFonte()" class="btn btn-outline-success my-2 my-sm-0"><img src="https://img.icons8.com/office/20/000000/decrease-font.png"></button>
     </div>
     <!-- <input type="text" [(ngModel)]="test" (ngModelChange)="testLog($event)" placeholder="Test field"> -->
     <app-barra-busca (searchEvent)="_query=$event"></app-barra-busca>

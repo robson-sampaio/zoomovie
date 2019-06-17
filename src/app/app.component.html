@@ -1,11 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.--> 
 <!-- {{idGenero}} -->
 <!-- "App + {{_query}}"<br> -->
-
 <app-barra-navegacao #barraNavegacao (searchEvent)="_query=$event" (onToggle)="menuLateral.abreFechaMenu()"></app-barra-navegacao>
+
 <div class="main">
-    <app-menu-lateral #menuLateral (childEvent)="idGenero=$event"  ></app-menu-lateral>
-    <div class="content">
+    <app-menu-lateral #menuLateral (childEvent)="idGenero=$event" [parentData]="barraNavegacao.color" [fontSizeData]="barraNavegacao.fontSize"></app-menu-lateral>
+    <div  class="content">
             <!-- <router-outlet></router-outlet>  -->
         <app-painel-simples [searchData]="barraNavegacao._query" [parentData]="idGenero"></app-painel-simples>
     </div>

@@ -1,15 +1,34 @@
 .menu {
     width: 0px;
     height: 100%;
-    border-top: 1px solid #333;
-    background-color: #222;
+    /* border-top: 1px solid #333; */
+    background-color: #343a40;
+    /* background-color: white; */
     flex-shrink: 0;
     overflow: hidden;
     transition: width .5s;
 }
+
+.fonteUm{
+    font-size: 15px;
+}
+
+.fonteDois{
+    font-size: 20px;
+}
+
+.fonteTres{
+    font-size: 25px;
+}
+
+
+.menu-color{
+    background-color: white;
+}
  
 .menu.menu-open {
     width: 300px;
+    background-color: 
 }
  
 .menu ul {
@@ -30,5 +49,7 @@
  
 .menu ul li:hover a,
 .menu ul li.active a {
-    color: white
+    color: #9d9d9d;
+    font-weight: 600;
+    
 }
