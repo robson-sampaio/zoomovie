@@ -16,5 +16,6 @@ export class BarraBuscaComponent{
 
   fireEvent(){
     this.searchEvent.emit(this.query);
+    this.query = "";
   }
 }

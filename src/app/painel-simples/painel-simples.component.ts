@@ -25,6 +25,7 @@ export class PainelSimplesComponent implements OnInit, OnChanges {
   // @Input('parentData') public busca =""
   @Input('parentData') public idGenero;
   @Input('searchData') public query;
+  @Input('homeEvent') public home;
 
   constructor(private http:HttpClient, public dialog: MatDialog) { }
 
@@ -83,6 +84,15 @@ export class PainelSimplesComponent implements OnInit, OnChanges {
           console.log(this. query);
           this.isLoad = true;
         })
+    }
+
+    if(changes.home){
+      this.http.get("https://api.themoviedb.org/3/discover/movie?api_key=95e310c9cdf43a266b381436c3d83fc8&sort_by=popularity.desc&include_adult=false&include_video=false&language=pt-BR")
+      .subscribe( data => {
+        this.movies = data;
+        // console.log(this.movies)
+        this.isLoad = true;
+      })
     }
 
   }

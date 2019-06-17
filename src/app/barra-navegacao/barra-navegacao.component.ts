@@ -1,5 +1,6 @@
 import { Component, OnChanges, SimpleChanges, Output, EventEmitter, Input } from '@angular/core';
 import { TouchSequence } from 'selenium-webdriver';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-barra-navegacao',
@@ -14,6 +15,7 @@ export class BarraNavegacaoComponent implements OnChanges {
   public iconColor = "dark"
   public fontSize = "";
   public indice = 0;
+  public home = false;
   public fonteUm = true;
   public fonteDois = false;
   public fonteTres = false;
@@ -35,10 +37,6 @@ export class BarraNavegacaoComponent implements OnChanges {
 
   constructor() { }
 
-  testLog(e){
-    console.log(e)
-  }
-
   mudaCor(){
     if(this.color == "dark"){
       this.color = "white";
@@ -47,6 +45,10 @@ export class BarraNavegacaoComponent implements OnChanges {
       this.color = "dark";
       this.iconColor = "dark"
     } 
+  }
+
+  homeEvent(){
+    this.home = !this.home;
   }
 
   aumentaFonte(){
