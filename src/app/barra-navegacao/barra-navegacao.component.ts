@@ -12,7 +12,8 @@ export class BarraNavegacaoComponent implements OnChanges {
   private _query: string;
   public generoLista;
   public color = "dark";
-  public iconColor = "dark"
+  public iconColor = "dark";
+  public flagCor = true;
   public fontSize = "";
   public indice = 0;
   public home = false;
@@ -41,9 +42,11 @@ export class BarraNavegacaoComponent implements OnChanges {
     if(this.color == "dark"){
       this.color = "white";
       this.iconColor = "light";
+      this.flagCor = false;
     }else{
       this.color = "dark";
-      this.iconColor = "dark"
+      this.iconColor = "dark";
+      this.flagCor = true;
     } 
   }
 
