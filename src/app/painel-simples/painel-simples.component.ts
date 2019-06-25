@@ -2,7 +2,7 @@ import { Component, OnInit, OnChanges, SimpleChanges, Input, Output, EventEmitte
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material';
 import { DetalhesComponent } from './detalhes/detalhes.component';
-
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-painel-simples',
@@ -27,7 +27,7 @@ export class PainelSimplesComponent implements OnInit, OnChanges {
   @Input('searchData') public query;
   @Input('homeEvent') public home;
 
-  constructor(private http:HttpClient, public dialog: MatDialog) { }
+  constructor(private http:HttpClient, public dialog: MatDialog) {   }
 
   getDetails(movie){
     this.detalhes = movie;

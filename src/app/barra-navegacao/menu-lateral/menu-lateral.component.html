@@ -1,6 +1,6 @@
 
 <div class="menu" [class.menu-color]="menuColor" [class.menu-open]="menuAberto" [class.fonteDois]="fonteDois" [class.fonteTres]="fonteTres" [class.fonteUm]="fonteUm" (click)="abreFechaMenu()">
-  <ul *ngFor="let aux of generos.genres">
-    <li class="visible-xs"><a routerLink="/aux" (click)="getGenero(aux.id)">{{aux.name}}</a></li>
+  <ul class="list-group" *ngFor="let aux of generos.genres">
+    <li class="list-group-item d-flex justify-content-between align-items-center" class="visible-xs"><a routerLink="/aux" (click)="getGenero(aux.id)">{{aux.name}}</a></li>
   </ul>
 </div>  

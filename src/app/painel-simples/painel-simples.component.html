@@ -1,8 +1,14 @@
 <!-- <app-painel-simples-especifico [base_url]="base_url" [size]="size" [movies]="movies"></app-painel-simples-especifico> -->
 <div class="row">
-    <div class="card" *ngFor="let movie of movies.results">
-      <div class="card-body">
-          <img (click)="getDetails(movie)" src="{{base_url}}{{size}}{{movie.poster_path}}">
+  <!-- <ngb-carousel>
+    <ng-template ngbSlide="true"> -->
+      <div class="card" style="width: 18rem;" *ngFor="let movie of movies.results">
+        <img class="card-img-top"(click)="getDetails(movie)" src="{{base_url}}{{size}}{{movie.backdrop_path}}">
+        <div class="card-body">
+            <div class="card-title">{{movie.title}}</div>
+        </div>
       </div>
-    </div>
+    <!-- </ng-template>
+  </ngb-carousel> -->
+
 </div>

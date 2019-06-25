@@ -14,6 +14,7 @@ import { BarraBuscaComponent } from './barra-navegacao/barra-busca/barra-busca.c
 import { MenuLateralComponent } from './barra-navegacao/menu-lateral/menu-lateral.component';
 import { PainelSimplesEspecificoComponent } from './painel-simples/painel-simples-especifico/painel-simples-especifico.component';
 import { DetalhesComponent } from './painel-simples/detalhes/detalhes.component';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 
 let routes = [
@@ -44,7 +45,7 @@ let routes = [
     RouterModule.forRoot(routes),
     MatDialogModule
   ],
-  providers: [],
+  providers: [NgbCarouselConfig],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
