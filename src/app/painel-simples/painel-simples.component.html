@@ -1,5 +1,8 @@
 <!-- <app-painel-simples-especifico [base_url]="base_url" [size]="size" [movies]="movies"></app-painel-simples-especifico> -->
 <div class="row">
+  <div class="category">
+    Filmes populares
+  </div>
   <div class="row-inner">
     <div class="card" style="width: 18rem;" *ngFor="let movie of movies.results">
       <img class="card-img-top"(click)="getDetails(movie)" src="{{base_url}}{{size}}{{movie.backdrop_path}}">
