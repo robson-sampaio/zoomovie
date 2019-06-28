@@ -21,6 +21,7 @@ export class PainelSimplesComponent implements OnInit, OnChanges {
   public movies = {};
   public detalhes;
   public mostrarDetalhes = false;
+  public isHover = false;
   
   // @Input('parentData') public busca =""
   @Input('parentData') public idGenero;
@@ -37,6 +38,10 @@ export class PainelSimplesComponent implements OnInit, OnChanges {
         filme:movie
       }
     })
+  }
+
+  showTitle(){
+    this.isHover = true;
   }
 
   ngOnInit() {
