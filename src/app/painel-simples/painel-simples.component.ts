@@ -22,13 +22,20 @@ export class PainelSimplesComponent implements OnInit, OnChanges {
   public detalhes;
   public mostrarDetalhes = false;
   public isHover = false;
+  public innerText = '';
   
   // @Input('parentData') public busca =""
   @Input('parentData') public idGenero;
   @Input('searchData') public query;
   @Input('homeEvent') public home;
 
-  constructor(private http:HttpClient, public dialog: MatDialog) {   }
+  constructor(private http:HttpClient, public dialog: MatDialog) {}
+
+  fireEvent(event){
+    this.innerText = event.target.currentSrc;
+    console.log(event);
+    console.log(this.innerText);
+  }
 
   getDetails(movie){
     this.detalhes = movie;

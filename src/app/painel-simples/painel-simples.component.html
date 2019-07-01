@@ -6,8 +6,8 @@
   <div class="row-inner">
       
       <div class="card" *ngFor="let movie of movies.results">
-        <img (mouseover)="isHover=true" (mouseleave)="isHover=false" class="card-img-top"(click)="getDetails(movie)" src="{{base_url}}{{size}}{{movie.backdrop_path}}">
-        <div class="card-body" *ngIf="isHover">
+        <img (mouseover)="isHover=true" (mouseover)="fireEvent($event)" (mouseleave)="isHover=false" class="card-img-top"(click)="getDetails(movie)" src="{{base_url}}{{size}}{{movie.backdrop_path}}">
+        <div class="card-body" *ngIf="isHover && innerText == base_url+size+movie.backdrop_path">
             <div [class.menu-title]="isHover">{{movie.title}}</div>
         </div>
       </div>
