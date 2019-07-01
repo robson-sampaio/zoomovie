@@ -33,8 +33,16 @@ export class PainelSimplesComponent implements OnInit, OnChanges {
 
   fireEvent(event){
     this.innerText = event.target.currentSrc;
-    console.log(event);
-    console.log(this.innerText);
+    // console.log(event);
+    // console.log(this.innerText);
+  }
+
+  toTheLeft(){
+
+  }
+
+  toTheRight(el: HTMLElement){
+    el.scrollIntoView();
   }
 
   getDetails(movie){

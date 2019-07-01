@@ -16,7 +16,6 @@ import { PainelSimplesEspecificoComponent } from './painel-simples/painel-simple
 import { DetalhesComponent } from './painel-simples/detalhes/detalhes.component';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
-
 let routes = [
   {path: "genero", component: PainelSimplesComponent },
   {path: "**", component: PainelSimplesComponent }

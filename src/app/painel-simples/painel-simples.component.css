@@ -1,15 +1,17 @@
 .row{
-  
   width: 100%;
-  /* overflow: auto; */
+  overflow: auto;
 }
 
+.left-button{
+    position: relative;
+    right: -30px;
+}
 
 .category{
     font-size: 20px;
     font-weight: 400;
     color: azure;
-    position: static;
 }
 
 .row-inner{
@@ -25,23 +27,43 @@
 }
 
 .card:hover{
-    margin: 0 100px;
-    transform: scale(1.5);
+    margin: 0 50px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    transform: scale(1.3);
 }
 
+.card-img-top{
+    object-fit: fill;
+}
 
-.card-title{
+.card-img-top:hover{
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+     /* background-image: linear-gradient(to top right, red, yellow) */
+}
+
+.teste{
+    margin-top: 30px;
+    /* object-fit: fill; */
+    background-color: burlywood;
+}
+
+.teste:hover{
+    background: linear-gradient(red, yellow); 
+}
+
+.menu-title{
     opacity: 1;
     touch-action: auto;
-    transform: scale(1);
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .card-body{
     position: absolute;
-     bottom: 0;
-     font-size: 10px;
-     color: azure;
-     font-weight: 300;
-     opacity: 50;
+    bottom: 0;
+    font-size: 10px;
+    color: azure;
+    font-weight: 300;
+    /* opacity: 50; */
 }
 

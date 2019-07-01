@@ -1,24 +1,31 @@
 <!-- <app-painel-simples-especifico [base_url]="base_url" [size]="size" [movies]="movies"></app-painel-simples-especifico> -->
 <div class="row">
-  <!-- <div class="category">
+  <div class="category">
     Filmes populares
-  </div> -->
-  <div class="row-inner">
-      
+  </div>
+  <div class="row-inner" #target>
+
+
       <div class="card" *ngFor="let movie of movies.results">
-        <img (mouseover)="isHover=true" (mouseover)="fireEvent($event)" (mouseleave)="isHover=false" class="card-img-top"(click)="getDetails(movie)" src="{{base_url}}{{size}}{{movie.backdrop_path}}">
+
+        <img (mouseover)="isHover=true" 
+             (mouseover)="fireEvent($event)" 
+             (mouseleave)="isHover=false" 
+             (click)="getDetails(movie)" 
+             class="card-img-top"
+             src="{{base_url}}{{size}}{{movie.backdrop_path}}">
+
         <div class="card-body" *ngIf="isHover && innerText == base_url+size+movie.backdrop_path">
             <div [class.menu-title]="isHover">{{movie.title}}</div>
         </div>
-      </div>
+      </div> 
+     
   </div>
 </div>
-
-
-<script>
-
-</script>
-
+<ul style="display: inline-block;">
+    <li><button (click)="toTheLeft(target)" class="nav-button" class="left-button" title="Esquerda">Esquerda</button></li>
+    <li><button (click)="toTheRight(target)" class="nav-button" class="right-button" title="Direita">Direita</button></li>  
+</ul>
 
 
 <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
