@@ -37,8 +37,8 @@ export class PainelSimplesComponent implements OnInit, OnChanges {
     // console.log(this.innerText);
   }
 
-  toTheLeft(){
-
+  toTheLeft(event){
+    console.log(event);
   }
 
   toTheRight(el: HTMLElement){
