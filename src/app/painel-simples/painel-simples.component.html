@@ -41,26 +41,70 @@
                         (mouseleave)="isHover=false" 
                         (click)="getDetails(movie)" 
                         src="{{base_url}}{{size}}{{movie.backdrop_path}}">
+                        <div class="card-body" *ngIf="isHover && innerText == base_url+size+movie.backdrop_path">
+                          <div [class.menu-title]="isHover">{{movie.title}}</div>
+                      </div>
                 </div>
+                {{isHover}}
             </div>
             <div class="carousel-item row" >
                 <div class="col-3 float-left" *ngFor="let movie of movies.results; index as i">
-                  <img *ngIf="i == 4 || i == 5 || i == 6 || i == 7" class="img-fluid" src="{{base_url}}{{size}}{{movie.backdrop_path}}">
+                  <img *ngIf="i == 4 || i == 5 || i == 6 || i == 7" 
+                        class="card-img-top"
+                        class="img-fluid" 
+                        (mouseover)="isHover=true" 
+                        (mouseover)="fireEvent($event)" 
+                        (mouseleave)="isHover=false" 
+                        (click)="getDetails(movie)" 
+                        src="{{base_url}}{{size}}{{movie.backdrop_path}}">
+                        <div class="card-body" *ngIf="isHover && innerText == base_url+size+movie.backdrop_path">
+                          <div [class.menu-title]="isHover">{{movie.title}}</div>
+                        </div>
                 </div>
             </div>
             <div class="carousel-item row">
                 <div class="col-3 float-left" *ngFor="let movie of movies.results; index as i">
-                  <img *ngIf="i == 8 || i == 9 || i == 10 || i == 11" class="img-fluid" src="{{base_url}}{{size}}{{movie.backdrop_path}}">
+                  <img *ngIf="i == 8 || i == 9 || i == 10 || i == 11" 
+                        class="card-img-top"
+                        class="img-fluid" 
+                        (mouseover)="isHover=true" 
+                        (mouseover)="fireEvent($event)" 
+                        (mouseleave)="isHover=false" 
+                        (click)="getDetails(movie)" 
+                        src="{{base_url}}{{size}}{{movie.backdrop_path}}">
+                        <div class="card-body" *ngIf="isHover && innerText == base_url+size+movie.backdrop_path">
+                          <div [class.menu-title]="isHover">{{movie.title}}</div>
+                        </div>
                 </div>
             </div>
             <div class="carousel-item row" >
                 <div class="col-3 float-left" *ngFor="let movie of movies.results; index as i">
-                  <img *ngIf="i == 12 || i == 13 || i == 14 || i == 15" class="img-fluid" src="{{base_url}}{{size}}{{movie.backdrop_path}}">
+                  <img *ngIf="i == 12 || i == 13 || i == 14 || i == 15" 
+                        class="card-img-top"
+                        class="img-fluid" 
+                        (mouseover)="isHover=true" 
+                        (mouseover)="fireEvent($event)" 
+                        (mouseleave)="isHover=false" 
+                        (click)="getDetails(movie)" 
+                        src="{{base_url}}{{size}}{{movie.backdrop_path}}">
+                        <div class="card-body" *ngIf="isHover && innerText == base_url+size+movie.backdrop_path">
+                          <div [class.menu-title]="isHover">{{movie.title}}</div>
+                        </div>
                 </div>
             </div>
             <div class="carousel-item row">
                 <div class="col-3 float-left" *ngFor="let movie of movies.results; index as i">
-                  <img *ngIf="i == 16 || i == 17 || i == 18 || i == 19" class="img-fluid" src="{{base_url}}{{size}}{{movie.backdrop_path}}">
+                  <img *ngIf="i == 16 || i == 17 || i == 18 || i == 19" 
+                        class="card-img-top"
+                        class="img-fluid" 
+                        (mouseover)="isHover=true" 
+                        (mouseover)="fireEvent($event)" 
+                        (mouseleave)="isHover=false" 
+                        (click)="getDetails(movie)" 
+                        src="{{base_url}}{{size}}{{movie.backdrop_path}}">
+                        <div class="card-body" *ngIf="isHover && innerText == base_url+size+movie.backdrop_path">
+                          <div [class.menu-title]="isHover">{{movie.title}}</div>
+                        </div>
                 </div>
             </div>
         </div>
